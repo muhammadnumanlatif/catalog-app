@@ -13,19 +13,7 @@ class MyApp extends StatelessWidget {
         accentColor: CAColor.secondary,
       ),
       //*Scaffold
-      home: Scaffold(
-        appBar: AppBar(
-          title: Text('Catalog App'),
-        ),
-        //*drawer
-        drawer: Drawer(),
-        //*body
-        body: Center(
-          child: Text(
-            'Catalog-App by Pawan-Kumar',
-          ),
-        ),
-      ),
+      home: Home(),
     );
   }
 }
