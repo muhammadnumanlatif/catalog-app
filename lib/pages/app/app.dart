@@ -8,12 +8,20 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       title: 'Catalog-App by Pawan-Kumar',
+      themeMode: ThemeMode.light,
       theme: ThemeData(
         primaryColor: CAColor.dark,
         accentColor: CAColor.secondary,
       ),
-      //*Scaffold
-      home: Home(),
+      darkTheme: ThemeData(
+        brightness: Brightness.dark,
+      ),
+      //*routes
+      routes: {
+        "/": (context) => LoginPage(),
+        "/home": (context) => HomePage(),
+        "/login": (context) => LoginPage(),
+      },
     );
   }
 }
