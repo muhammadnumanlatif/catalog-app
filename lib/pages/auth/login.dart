@@ -1,9 +1,16 @@
 //*utils
 import '../../utils/utils.dart';
 
-class LoginPage extends StatelessWidget {
+class LoginPage extends StatefulWidget {
   const LoginPage({Key key}) : super(key: key);
 
+  @override
+  _LoginPageState createState() => _LoginPageState();
+}
+
+class _LoginPageState extends State<LoginPage> {
+  String name = '';
+  bool changeButton = false;
   @override
   Widget build(BuildContext context) {
     return Material(
@@ -25,7 +32,8 @@ class LoginPage extends StatelessWidget {
 
             //*title
             Text(
-              'Let\'s explore together...',
+              'Welcome $name,\nLet\'s explore together...',
+              textAlign: TextAlign.center,
               style: TextStyle(
                 color: CAColor.dark,
                 fontSize: 28,
@@ -50,6 +58,10 @@ class LoginPage extends StatelessWidget {
                       hintText: 'Enter Username',
                       labelText: 'Username',
                     ),
+                    onChanged: (value) {
+                      name = value;
+                      setState(() {});
+                    },
                   ),
                   //*password
                   TextFormField(
@@ -64,19 +76,53 @@ class LoginPage extends StatelessWidget {
                     height: 25,
                   ),
                   //*button
-                  ElevatedButton(
-                    child: Text(
-                      'Login',
-                    ),
-                    style: TextButton.styleFrom(
-                      backgroundColor: CAColor.dark,
-                      minimumSize: Size(125, 50),
-                    ),
-                    onPressed: () {
-                      //*print('avine tech');
+                  InkWell(
+                    onTap: () async {
+                      setState(() {
+                        changeButton = true;
+                      });
+                      await Future.delayed(Duration(seconds: 1));
+
                       Navigator.pushNamed(context, CARoute.homeRoute);
                     },
+                    child: AnimatedContainer(
+                      height: 50,
+                      width: changeButton ? 50 : 125,
+                      duration: Duration(seconds: 1),
+                      decoration: BoxDecoration(
+                        color: CAColor.dark,
+                        borderRadius:
+                            BorderRadius.circular(changeButton ? 50 : 8),
+                      ),
+                      alignment: Alignment.center,
+                      child: changeButton
+                          ? Icon(
+                              Icons.done,
+                              color: CAColor.white,
+                            )
+                          : Text(
+                              'Login',
+                              style: TextStyle(
+                                fontSize: 18,
+                                color: CAColor.white,
+                                fontWeight: FontWeight.bold,
+                              ),
+                            ),
+                    ),
                   ),
+                  // ElevatedButton(
+                  //   child: Text(
+                  //     'Login',
+                  //   ),
+                  //   style: TextButton.styleFrom(
+                  //     backgroundColor: CAColor.dark,
+                  //     minimumSize: Size(125, 50),
+                  //   ),
+                  //   onPressed: () {
+                  //     //*print('avine tech');
+                  //     Navigator.pushNamed(context, CARoute.homeRoute);
+                  //   },
+                  // ),
                 ],
               ),
             ),
