@@ -5,4 +5,5 @@ export 'package:flutter/material.dart';
 export '../pages/pages.dart';
 
 //*utils
+export 'drawer.dart';
 export 'constants.dart';

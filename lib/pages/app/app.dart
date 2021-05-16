@@ -20,7 +20,7 @@ class MyApp extends StatelessWidget {
         brightness: Brightness.dark,
       ),
       //*routes
-      initialRoute: "/",
+      initialRoute: CARoute.homeRoute,
       routes: {
         "/": (context) => LoginPage(),
         CARoute.homeRoute: (context) => HomePage(),
