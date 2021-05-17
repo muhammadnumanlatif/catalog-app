@@ -62,12 +62,24 @@ class CATheme {
     gradient: LinearGradient(
       colors: [
         CAColor.dark.withOpacity(0.75),
-        //CAColor.light,
-        //
         CAColor.dark,
       ],
       begin: Alignment.topLeft,
       end: Alignment.centerRight,
+    ),
+  );
+  static BoxDecoration gradientLogin = BoxDecoration(
+    //color: CAColor.dark.withOpacity(0.75),
+    gradient: LinearGradient(
+      colors: [
+        Colors.grey,
+        CAColor.white,
+        //CColor.dark.withOpacity(0.4),
+        //CAColor.dark.withOpacity(0.2),
+      ],
+      begin: Alignment.topRight,
+      end: Alignment.bottomLeft,
+      
     ),
   );
 }
