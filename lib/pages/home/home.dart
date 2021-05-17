@@ -9,15 +9,22 @@ class HomePage extends StatelessWidget {
     return Scaffold(
       //*appbar
       appBar: AppBar(
+        backgroundColor: CAColor.dark.withOpacity(0.75),
         elevation: 0,
-        title: Text('Catalog App'),
+        title: Text(
+          'Catalog App',
+          style: Theme.of(context).textTheme.headline1,
+        ),
       ),
       //*drawer
       drawer: CustomDrawer(),
       //*body
-      body: Center(
-        child: Text(
-          'Catalog-App by Pawan-Kumar',
+      body: Container(
+        decoration: CATheme.gradientData,
+        child: Center(
+          child: Text(
+            'Catalog-App by Pawan-Kumar',
+          ),
         ),
       ),
     );

@@ -1,6 +1,4 @@
 //*utils
-import 'package:google_fonts/google_fonts.dart';
-
 import '../../utils/utils.dart';
 
 class MyApp extends StatelessWidget {
@@ -9,16 +7,10 @@ class MyApp extends StatelessWidget {
     //*Material App
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      title: 'Catalog-App by Pawan-Kumar',
+      title: 'Catalog-App',
       themeMode: ThemeMode.light,
-      theme: ThemeData(
-        textTheme: GoogleFonts.latoTextTheme(),
-        primaryColor: CAColor.dark,
-        accentColor: CAColor.secondary,
-      ),
-      darkTheme: ThemeData(
-        brightness: Brightness.dark,
-      ),
+      theme: CATheme.light(context),
+      darkTheme: CATheme.dark(context),
       //*routes
       initialRoute: CARoute.homeRoute,
       routes: {

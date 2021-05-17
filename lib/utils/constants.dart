@@ -1,4 +1,6 @@
+import 'package:catalogbypk/utils/utils.dart';
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 
 class CAColor {
   static const secondary = Color(0xffe75480);
@@ -14,4 +16,58 @@ class CAColor {
 class CARoute {
   static const loginRoute = '/login';
   static const homeRoute = '/home';
+}
+
+class CATheme {
+  static ThemeData light(BuildContext context) => ThemeData(
+        textTheme: GoogleFonts.adaminaTextTheme().copyWith(
+          bodyText1: TextStyle(
+            color: CAColor.white,
+            fontSize: 18,
+            fontWeight: FontWeight.w400,
+          ),
+          headline1: TextStyle(
+            color: CAColor.white,
+            fontSize: 22,
+            fontWeight: FontWeight.w400,
+          ),
+        ),
+        primaryColor: CAColor.dark,
+        accentColor: CAColor.secondary,
+        appBarTheme: AppBarTheme(
+          color: CAColor.dark.withOpacity(0.75),
+          elevation: 0,
+          iconTheme: IconThemeData(
+            color: CAColor.white,
+          ),
+        ),
+      );
+  static ThemeData dark(BuildContext context) => ThemeData(
+        textTheme: GoogleFonts.latoTextTheme(),
+        brightness: Brightness.dark,
+        // primaryColor: CAColor.dark,
+        // accentColor: CAColor.secondary,
+        // appBarTheme: AppBarTheme(
+        //   color: CAColor.transparent,
+        //   elevation: 0,
+        //   iconTheme: IconThemeData(
+        //     color: CAColor.dark,
+        //   ),
+        //   textTheme: Theme.of(context).textTheme,
+        // ),
+      );
+
+  static BoxDecoration gradientData = BoxDecoration(
+    //color: CAColor.dark.withOpacity(0.75),
+    gradient: LinearGradient(
+      colors: [
+        CAColor.dark.withOpacity(0.75),
+        //CAColor.light,
+        //
+        CAColor.dark,
+      ],
+      begin: Alignment.topLeft,
+      end: Alignment.centerRight,
+    ),
+  );
 }

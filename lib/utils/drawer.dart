@@ -10,61 +10,33 @@ class CustomDrawer extends StatelessWidget {
   Widget build(BuildContext context) {
     return Drawer(
       child: Container(
-        decoration: BoxDecoration(
-          gradient: LinearGradient(
-            colors: [
-              CAColor.dark.withOpacity(0.75),
-              //CAColor.light,
-              //
-              CAColor.dark,
-            ],
-            begin: Alignment.topLeft,
-            end: Alignment.centerRight,
-          ),
-        ),
+        decoration: CATheme.gradientData,
         child: ListView(
           padding: EdgeInsets.zero,
           children: [
             //*Header
-            Container(
-              decoration: BoxDecoration(
-                gradient: LinearGradient(
-                  colors: [
-                    //CAColor.light,
-                    CAColor.dark,
-                    CAColor.dark.withOpacity(0.75),
-                    //CAColor.secondary,
-                  ],
-                  begin: Alignment.topCenter,
-                  end: Alignment.bottomCenter,
-                ),
-              ),
-              child: DrawerHeader(
+            DrawerHeader(
+              margin: EdgeInsets.zero,
+              padding: EdgeInsets.zero,
+              child: UserAccountsDrawerHeader(
                 margin: EdgeInsets.zero,
-                padding: EdgeInsets.zero,
-                child: UserAccountsDrawerHeader(
-                  margin: EdgeInsets.zero,
-                  accountName: Text(
-                    'Avine Tech',
-                    style: TextStyle(
-                      fontSize: 18,
-                    ),
+                decoration: CATheme.gradientData,
+                accountName: Text(
+                  'Avine Tech',
+                  style: Theme.of(context).textTheme.bodyText1,
+                ),
+                accountEmail: Text(
+                  'admin@gmail.com',
+                  style: Theme.of(context).textTheme.bodyText1,
+                ),
+                currentAccountPicture: CircleAvatar(
+                  radius: 25,
+                  child: Icon(
+                    Icons.person,
+                    color: CAColor.dark.withOpacity(0.75),
+                    size: 35,
                   ),
-                  accountEmail: Text(
-                    'admin@gmail.com',
-                    style: TextStyle(
-                      fontSize: 18,
-                    ),
-                  ),
-                  currentAccountPicture: CircleAvatar(
-                    radius: 25,
-                    child: Icon(
-                      Icons.person,
-                      color: CAColor.dark,
-                      size: 35,
-                    ),
-                    backgroundColor: CAColor.white,
-                  ),
+                  backgroundColor: CAColor.white,
                 ),
               ),
             ),
@@ -76,11 +48,7 @@ class CustomDrawer extends StatelessWidget {
               ),
               title: Text(
                 'Home',
-                style: TextStyle(
-                  fontSize: 18,
-                  fontWeight: FontWeight.w500,
-                  color: CAColor.white,
-                ),
+                style: Theme.of(context).textTheme.bodyText1,
               ),
             ),
             //*profile
@@ -91,11 +59,7 @@ class CustomDrawer extends StatelessWidget {
               ),
               title: Text(
                 'Profile',
-                style: TextStyle(
-                  fontSize: 18,
-                  fontWeight: FontWeight.w500,
-                  color: CAColor.white,
-                ),
+                style: Theme.of(context).textTheme.bodyText1,
               ),
             ),
             //*home
@@ -106,11 +70,7 @@ class CustomDrawer extends StatelessWidget {
               ),
               title: Text(
                 'Email Us',
-                style: TextStyle(
-                  fontSize: 18,
-                  fontWeight: FontWeight.w500,
-                  color: CAColor.white,
-                ),
+                style: Theme.of(context).textTheme.bodyText1,
               ),
             ),
           ],
