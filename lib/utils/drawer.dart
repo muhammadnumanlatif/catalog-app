@@ -33,7 +33,7 @@ class CustomDrawer extends StatelessWidget {
                   radius: 25,
                   child: Icon(
                     Icons.person,
-                    color: CAColor.dark.withOpacity(0.75),
+                    color: Colors.grey,
                     size: 35,
                   ),
                   backgroundColor: CAColor.white,

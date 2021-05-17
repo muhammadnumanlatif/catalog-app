@@ -137,19 +137,6 @@ class _LoginPageState extends State<LoginPage> {
                           ),
                         ),
                       ),
-                      // ElevatedButton(
-                      //   child: Text(
-                      //     'Login',
-                      //   ),
-                      //   style: TextButton.styleFrom(
-                      //     backgroundColor: CAColor.dark,
-                      //     minimumSize: Size(125, 50),
-                      //   ),
-                      //   onPressed: () {
-                      //     //*print('avine tech');
-                      //     Navigator.pushNamed(context, CARoute.homeRoute);
-                      //   },
-                      // ),
                     ],
                   ),
                 ),
