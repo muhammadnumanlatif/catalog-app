@@ -1,6 +1,2 @@
-//*utils
-import '../utils/utils.dart';
-
-class Catalog {
-  
-}
+export 'item.dart';
+export 'catalogModel.dart';
