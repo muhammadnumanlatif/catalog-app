@@ -5,6 +5,9 @@ export 'dart:convert';
 export 'package:flutter/material.dart';
 export 'package:flutter/services.dart';
 
+//*3rd Party
+export 'package:velocity_x/velocity_x.dart';
+
 //*pages
 export '../pages/pages.dart';
 

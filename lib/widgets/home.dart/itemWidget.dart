@@ -11,8 +11,12 @@ class ItemWidget extends StatelessWidget {
     return Card(
       child: Container(
         decoration: CATheme.gradientData,
-              child: ListTile(
-          leading: Image.network(item.image),
+        child: ListTile(
+          leading: Image.network(
+            item.image,
+            fit: BoxFit.cover,
+            width: 50,
+          ),
           title: Text(item.name),
           subtitle: Text(item.desc),
           trailing: Text("\$${item.price}"),

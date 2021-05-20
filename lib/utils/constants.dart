@@ -36,6 +36,16 @@ class CATheme {
           color: CAColor.dark.withOpacity(0.75),
           elevation: 0,
         ),
+        elevatedButtonTheme: ElevatedButtonThemeData(
+          style: ButtonStyle(
+            backgroundColor: MaterialStateProperty.all(
+              CAColor.secondary,
+            ),
+            shape: MaterialStateProperty.all(
+              StadiumBorder(),
+            ),
+          ),
+        ),
       );
   static ThemeData dark(BuildContext context) => ThemeData(
         textTheme: GoogleFonts.latoTextTheme(),
