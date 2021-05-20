@@ -16,6 +16,7 @@ class CAColor {
 class CARoute {
   static const loginRoute = '/login';
   static const homeRoute = '/home';
+  static const homeDetailRoute = '/home-detail';
 }
 
 class CATheme {
