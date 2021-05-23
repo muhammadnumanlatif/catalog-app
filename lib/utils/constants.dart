@@ -1,4 +1,4 @@
-import 'package:catalogbypk/utils/utils.dart';
+import 'utils.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
@@ -14,8 +14,9 @@ class CAColor {
 }
 
 class CARoute {
-  static const loginRoute = '/login';
   static const homeRoute = '/home';
+  static const cartRoute = '/cart';
+  static const loginRoute = '/login';
   static const homeDetailRoute = '/home-detail';
 }
 
@@ -31,6 +32,8 @@ class CATheme {
             fontWeight: FontWeight.w400,
           ),
         ),
+        cardColor: CAColor.dark,
+        canvasColor: CAColor.light,
         primaryColor: CAColor.dark,
         accentColor: CAColor.secondary,
         appBarTheme: AppBarTheme(
@@ -49,7 +52,6 @@ class CATheme {
         ),
       );
   static ThemeData dark(BuildContext context) => ThemeData(
-        textTheme: GoogleFonts.latoTextTheme(),
         brightness: Brightness.dark,
       );
 
@@ -74,3 +76,4 @@ class CATheme {
     ),
   );
 }
+

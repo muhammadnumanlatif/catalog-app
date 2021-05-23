@@ -1,4 +1,5 @@
 //*utils
+
 import '../../utils/utils.dart';
 
 class HomePage extends StatefulWidget {
@@ -33,7 +34,16 @@ class _HomePageState extends State<HomePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: context.canvasColor,
       //*body
+      floatingActionButton: FloatingActionButton(
+        onPressed: () {
+          Navigator.pushNamed(context, CARoute.cartRoute);
+        },
+        child: Icon(
+          Icons.shopping_cart,
+        ),
+      ),
       body: SafeArea(
         child: Container(
           padding: Vx.m32,

@@ -11,7 +11,7 @@ class HomeDetailPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: CAColor.light,
+      backgroundColor: context.canvasColor,
       appBar: AppBar(),
       bottomNavigationBar: //*button
           ButtonBar(
@@ -20,10 +20,10 @@ class HomeDetailPage extends StatelessWidget {
         children: [
           //*price
           '\$${catalog.price}'.text.xl2.make(),
-          //*buy
+          //*Get Now
           ElevatedButton(
             onPressed: () {},
-            child: 'Buy'.text.xl.make(),
+            child: 'Get Now'.text.xl.make(),
           ).wh(100, 35),
         ],
       ).p24(),
@@ -48,19 +48,30 @@ class HomeDetailPage extends StatelessWidget {
                 child: Container(
                   decoration: CATheme.gradientData,
                   width: context.screenWidth,
-                  child: Column(
+                  child: ListView(
                     children: [
                       //*title
-                      catalog.name.text.bold.xl4.make(),
+                      catalog.name.text.bold.xl4.makeCentered(),
                       //*DESC
 
                       catalog.desc.text
                           .textStyle(context.captionStyle)
                           .xl
-                          .make(),
-                      10.heightBox,
+                          .makeCentered(),
+
+                      5.heightBox,
+                      "Enim voluptatibus aut iusto et et et quia voluptatem. Ducimus rerum aut ab blanditiis aliquid nulla impedit. Aspernatur at beatae eligendi error magni odio cumque. Occaecati quo fuga. Reiciendis at esse distinctio tempore qui ipsum totam iure."
+                          .text
+                          .textStyle(
+                            context.captionStyle,
+                          )
+                          .make()
+                          .p16(),
                     ],
-                  ).py64(),
+                  ).pOnly(
+                    top: 32,
+                    left: 16,
+                  ),
                 ),
               ),
             ),

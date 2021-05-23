@@ -7,3 +7,6 @@ export 'home/homeDetail.dart';
 
 //*auth
 export 'auth/login.dart';
+
+//*cart
+export 'cart/cart.dart';

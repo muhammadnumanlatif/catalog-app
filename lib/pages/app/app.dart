@@ -8,17 +8,17 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       title: 'Catalog-App',
-      themeMode: ThemeMode.light,
+      themeMode: ThemeMode.system,
       theme: CATheme.light(context),
       darkTheme: CATheme.dark(context),
       //*routes
       initialRoute: CARoute.homeRoute,
       routes: {
         "/": (context) => LoginPage(),
-        CARoute.loginRoute: (context) => LoginPage(),
         CARoute.homeRoute: (context) => HomePage(),
+        CARoute.cartRoute: (context) => CartPage(),
+        CARoute.loginRoute: (context) => LoginPage(),
         CARoute.homeDetailRoute: (context) => HomeDetailPage(),
-
       },
     );
   }
