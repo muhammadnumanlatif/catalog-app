@@ -1,4 +1,4 @@
-//*utils  
+//*utils
 import '../../utils/utils.dart';
 
 //*catalog List
@@ -11,15 +11,14 @@ class CatalogList extends StatelessWidget {
       shrinkWrap: true,
       itemCount: CatalogModel.items.length,
       itemBuilder: (context, index) {
-        final catalog = CatalogModel.getByPosition(index);
+        final catalog = CatalogModel.items[index];
         return InkWell(
-          onTap: () => Navigator.push(
-            context,
-            MaterialPageRoute(
-              builder: (context) => HomeDetailPage(
-                catalog: catalog,
-              ),
+          onTap: () => context.vxNav.push(
+            Uri(
+              path: CARoute.homeDetailRoute,
+              queryParameters: {"id": catalog.id.toString()},
             ),
+            params: catalog,
           ),
           child: CatalogItem(
             catalog: catalog,

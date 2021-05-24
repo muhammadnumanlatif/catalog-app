@@ -20,7 +20,7 @@ class _LoginPageState extends State<LoginPage> {
         changeButton = true;
       });
       await Future.delayed(Duration(seconds: 1));
-      await Navigator.pushNamed(context, CARoute.homeRoute);
+      await context.vxNav.push(Uri.parse(CARoute.homeRoute));
       setState(() {
         changeButton = false;
       });

@@ -28,16 +28,30 @@ class _CartTotal extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final CartModel _cart = (VxState.store as MyStore).cart;
+
     return SizedBox(
       height: 200,
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceAround,
         children: [
-          '\$ 999.00'.text.xl.makeCentered(),
+          VxConsumer(
+            builder: (context, dynamic, status) {
+              return '\$${_cart.totalPrice}'.text.xl.makeCentered();
+            },
+            mutations: {RemoveMutation},
+            notifications: {},
+          ),
           30.widthBox,
           //*Buy
           ElevatedButton(
-            onPressed: () {},
+            onPressed: () {
+              ScaffoldMessenger.of(context).showSnackBar(
+                SnackBar(
+                  content: 'Buying Not supported'.text.make(),
+                ),
+              );
+            },
             child: 'Buy'.text.xl.make(),
           ).wh(100, 35),
         ],
@@ -47,30 +61,28 @@ class _CartTotal extends StatelessWidget {
 }
 
 //*cart list
-class _CartList extends StatefulWidget {
-  _CartList({Key key}) : super(key: key);
-
-  @override
-  __CartListState createState() => __CartListState();
-}
-
-class __CartListState extends State<_CartList> {
+class _CartList extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return ListView.builder(
-      itemCount: 5,
-      itemBuilder: (context, index) {
-        return ListTile(
-          leading: Icon(Icons.done),
-          trailing: IconButton(
-            onPressed: () {},
-            icon: Icon(
-              Icons.delete,
-            ),
-          ),
-          title: 'Item ${index + 1}'.text.make(),
-        );
-      },
-    );
+    VxState.watch(context, on: [RemoveMutation]);
+    final CartModel _cart = (VxState.store as MyStore).cart;
+
+    return _cart.items.isEmpty
+        ? 'No item is added!'.text.xl3.makeCentered()
+        : ListView.builder(
+            itemCount: _cart.items?.length,
+            itemBuilder: (context, index) {
+              return ListTile(
+                leading: Icon(Icons.done),
+                trailing: IconButton(
+                  onPressed: () => RemoveMutation(_cart.items[index]),
+                  icon: Icon(
+                    Icons.delete,
+                  ),
+                ),
+                title: _cart.items[index].name.text.make(),
+              );
+            },
+          );
   }
 }

@@ -2,6 +2,11 @@
 import 'utils/utils.dart';
 
 void main() {
-  runApp(MyApp());
+  setPathUrlStrategy();
+  runApp(
+    VxState(
+      store: MyStore(),
+      child: MyApp(),
+    ),
+  );
 }
-

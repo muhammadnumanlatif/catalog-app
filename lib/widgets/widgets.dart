@@ -1,3 +1,4 @@
+export 'home.dart/addToCart.dart';
 export 'home.dart/catalogList.dart';
 export 'home.dart/catalogItem.dart';
 export 'home.dart/catalogImage.dart';

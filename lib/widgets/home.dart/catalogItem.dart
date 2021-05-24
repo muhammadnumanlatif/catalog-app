@@ -39,10 +39,7 @@ class CatalogItem extends StatelessWidget {
                     //*price
                     '\$${catalog.price}'.text.make(),
                     //*Place Order
-                    ElevatedButton(
-                      onPressed: () {},
-                      child: 'Get Now'.text.make(),
-                    ),
+                    AddToCart(catalog: catalog),
                   ],
                 ).pOnly(right: 8),
               ],
@@ -53,3 +50,4 @@ class CatalogItem extends StatelessWidget {
     ).gray300.square(150).rounded.make().py16();
   }
 }
+

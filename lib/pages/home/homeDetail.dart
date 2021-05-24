@@ -21,10 +21,9 @@ class HomeDetailPage extends StatelessWidget {
           //*price
           '\$${catalog.price}'.text.xl2.make(),
           //*Get Now
-          ElevatedButton(
-            onPressed: () {},
-            child: 'Get Now'.text.xl.make(),
-          ).wh(100, 35),
+          AddToCart(
+            catalog: catalog,
+          ),
         ],
       ).p24(),
       body: SafeArea(
